@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Counter from './ChildComponent';
 
-class Counters extends Component {
-  render() {
-    const {counters, onDelete, onDecrement, onIncrement, onReset} = this.props
+const Counters = (props) =>  {
+
+    const {counters, onDelete, onDecrement, onIncrement, onReset} = props
     return (
       <div>
         <Button
@@ -14,6 +14,7 @@ class Counters extends Component {
         >
           Reset
         </Button>
+        
         <ul>
           {counters.map((counter) => (
             <li>
@@ -29,7 +30,7 @@ class Counters extends Component {
         </ul>
       </div>
     );
-  }
+  
 }
 
 export default Counters;
